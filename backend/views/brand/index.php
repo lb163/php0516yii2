@@ -9,13 +9,13 @@
     </tr>
     <?php foreach ($brand as $row):?>
         <tr data-id="<?=$row->id?>">
-            <td><?=$row->id?></td>
+            <td></td>
             <td><?=$row->name?></td>
             <td><?=$row->intro?></td>
             <td><img src="<?=$row->logo?>" class="img-circle" style="width: 80px"/></td>
             <td>
                 <a href="javascript:;" class="btn btn-default del_btn"><span class="glyphicon glyphicon-trash"></span></a>
-                <a href="<?=\yii\helpers\Url::to(['brand/edit','id'=>$row->id])?>"class="glyphicon glyphicon-pencil"></a>
+                <a href="<?=\yii\helpers\Url::to(['brand/edit','id'=>$row->id])?>" class="glyphicon glyphicon-pencil"></a>
             </td>
         </tr>
     <?php endforeach;?>

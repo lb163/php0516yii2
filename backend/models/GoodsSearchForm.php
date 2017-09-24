@@ -9,7 +9,7 @@ class GoodsSearchForm extends Model{
     public function rules()
     {
         return [
-            [['name','sn','min','max'],'safe'],
+            [['name','sn','min','max'],'safe'],//safe说明这些字段是安全的
         ];
     }
 }

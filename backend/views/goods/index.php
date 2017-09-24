@@ -6,7 +6,7 @@ $form=\yii\bootstrap\ActiveForm::begin([
 echo $form->field($model,'name')->textInput(['placeholder'=>'商品名']);
 echo $form->field($model,'sn')->textInput(['placeholder'=>'货号']);
 echo $form->field($model,'min')->textInput(['placeholder'=>'$0']);
-echo $form->field($model,'max')->textInput(['placeholder'=>'$9999']);
+echo $form->field($model,'max')->textInput(['placeholder'=>'$999']);
 echo \yii\bootstrap\Html::submitButton('搜索',['class'=>'btn btn-default']);
 \yii\bootstrap\ActiveForm::end();
 ?>

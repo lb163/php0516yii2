@@ -9,7 +9,7 @@
     </tr>
     <?php foreach ($brand as $row):?>
         <tr data-id="<?=$row->id?>">
-            <td></td>
+            <td><?=$row->id?></td>
             <td><?=$row->name?></td>
             <td><?=$row->intro?></td>
             <td><img src="<?=$row->logo?>" class="img-circle" style="width: 80px"/></td>

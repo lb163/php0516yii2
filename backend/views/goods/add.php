@@ -60,8 +60,9 @@ echo $form->field($goods_intro,'content')->widget('kucha\ueditor\UEditor',[
 
 echo \yii\bootstrap\Html::submitButton('提交',['class'=>'btn btn-info']);
 \yii\bootstrap\ActiveForm::end();
-$this->registerCssFile('@web/ztree/css/zTreeStyle/zTreeStyle.css');
+
 //注册js文件 (需要在jquery后面加载)
+$this->registerCssFile('@web/ztree/css/zTreeStyle/zTreeStyle.css');
 $this->registerJsFile('@web/ztree/js/jquery.ztree.core.js',['depends'=>\yii\web\JqueryAsset::className()]);
 $goodsCategories = json_encode(\backend\models\GoodsCategory::getZNodes());
 $this->registerJs(new \yii\web\JsExpression(
@@ -81,7 +82,7 @@ var zTreeObj;
 		        onClick: function(event, treeId, treeNode){
 		             console.log(treeNode);
 		             //获取当前点击节点的id,写入parent_id的值
-		             $("#goodscategory-parent_id").val(treeNode.id);
+		             $("#goods-goods_category_id").val(treeNode.id);
 		        }
 	        }
         };

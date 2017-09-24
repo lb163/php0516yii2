@@ -16,9 +16,9 @@ use flyok666\qiniu\Qiniu;
 
 class GoodsController extends Controller{
     public function actionIndex(){
-        $model = new GoodsSearchForm();
+        $model = new GoodsSearchForm();//表单模型
         $goods = Goods::find();
-        $model->load(\Yii::$app->request->get());
+        $model->load(\Yii::$app->request->get());//加载模板用get方式
         if($model->name){
             $goods->andWhere(['like','name',$model->name]);
         }
@@ -47,8 +47,10 @@ class GoodsController extends Controller{
         $request = \Yii::$app->request;
         if($request->isPost){
             $goods->load($request->post());
+
             $goods_intro->load($request->post());
             if ($goods->validate() && $goods_intro->validate()){
+//                var_dump($goods);die;
                 //自动生成sn
                 $day = date('Y-m-d');
                 $goodsCount = Goods_day_count::findOne(['day'=>$day]);

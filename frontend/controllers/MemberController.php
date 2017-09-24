@@ -151,19 +151,20 @@ class MemberController extends Controller
         return $this->renderPartial('cart');
     }
     //购物车页面
-    public function actionCart(){
+    public function actionCart()
+    {
         //获取购物车数据
         if(\Yii::$app->user->isGuest){
-            //从cookie
             $cookies = \Yii::$app->request->cookies;
             $value = $cookies->getValue('carts');
             if($value){
-                $carts = unserialize($value);//$carts = [1=>2,2=>10]
+                $carts = unserialize($value);
             }else{
                 $carts = [];
             }
             $models = Goods::find()->where(['in','id',array_keys($carts)])->all();
         }else{
+
         }
         return $this->renderPartial('cart',['models'=>$models,'carts'=>$carts]);
     }
